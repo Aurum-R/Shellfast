@@ -82,18 +82,21 @@ pytest tests/ -v
 ## 🏗️ Architecture
 
 ```
-src/
-├── shellfast/          # Python package
-│   ├── __init__.py     # Public API
-│   ├── _core.pyi       # Type stubs
-│   └── py.typed        # PEP 561 marker
-└── cpp/                # C++ implementations
-    ├── module.cpp       # pybind11 entry point
-    ├── filesystem/      # ls, cp, mv, rm, find, etc.
-    ├── text/            # cat, grep, sort, diff, wc, etc.
-    ├── system/          # uname, whoami, uptime, env, etc.
-    ├── process/         # ps, kill, killall
-    └── network/         # ping, nslookup, ifconfig
+Shell Command Wrapper/
+├── pyproject.toml       # Build config (scikit-build-core)
+├── CMakeLists.txt       # CMake build rules
+├── shellfast/           # Python package
+│   ├── __init__.py      # Public API (re-exports all commands)
+│   ├── _core.pyi        # Type stubs for IDE support
+│   └── py.typed         # PEP 561 marker
+├── src/cpp/             # C++ implementations
+│   ├── module.cpp       # pybind11 entry point
+│   ├── filesystem/      # ls, cp, mv, rm, find, etc.
+│   ├── text/            # cat, grep, sort, diff, wc, etc.
+│   ├── system/          # uname, whoami, uptime, env, etc.
+│   ├── process/         # ps, kill, killall
+│   └── network/         # ping, nslookup, ifconfig
+└── tests/               # pytest test suites
 ```
 
 ## 📄 License
