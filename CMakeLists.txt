@@ -16,8 +16,7 @@ pybind11_add_module(_core
 )
 
 target_include_directories(_core PRIVATE src/cpp)
-
-# Link stdc++fs for older compilers, pthread for threading
-target_link_libraries(_core PRIVATE stdc++fs pthread)
+target_link_libraries(_core PRIVATE pthread)
 
 install(TARGETS _core DESTINATION shellfast)
+

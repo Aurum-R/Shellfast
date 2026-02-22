@@ -25,7 +25,8 @@ test = ["pytest>=7.0"]
 
 [tool.scikit-build]
 cmake.build-type = "Release"
-wheel.packages = ["src/shellfast"]
+wheel.packages = ["shellfast"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+
