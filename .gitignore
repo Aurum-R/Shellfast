@@ -1,1 +1,29 @@
+# Virtual environment
 venv/
+.venv/
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+dist/
+build/
+
+# C++ / CMake build artifacts
+_skbuild/
+_cmake_test_compile/
+*.so
+*.o
+*.a
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
